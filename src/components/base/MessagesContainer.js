@@ -20,7 +20,8 @@ export const MessagesContainer = () => {
 
     return (
         <div className={'message-container'}>
-            {messages.map((message, index) => <Message key={index} message={message} removeMessage={removeMessage} />)}
+            {messages.map((message, index) =>
+                <Message key={index} message={message} removeMessage={removeMessage}/>)}
         </div>
     )
 }
