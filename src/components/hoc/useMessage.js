@@ -1,4 +1,4 @@
-import {store} from '../base/store';
+import {store} from '../base';
 
 export function useMessage() {
     const addMessage = (data) => {
