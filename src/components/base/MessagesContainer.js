@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Message.css';
+import './styles/Message.css';
 import {Message} from './Message';
 import {store} from "./store";
 import {useMessage} from "../hoc/useMessage";

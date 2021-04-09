@@ -2,7 +2,7 @@ import DoneIcon from '@material-ui/icons/Done';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import WarningIcon from '@material-ui/icons/Warning';
 import ClearIcon from '@material-ui/icons/Clear';
-import './Message.css';
+import './styles/Message.css';
 
 export const Message = (props) => {
     const {_id, messageCode, text} = props.message;

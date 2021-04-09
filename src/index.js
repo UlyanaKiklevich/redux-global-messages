@@ -1,14 +1,21 @@
+// React essential cvomponents
 import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import './styles/fonts.css';
 import {BrowserRouter as Router, Switch, Route, Link, withRouter} from "react-router-dom";
-import {Page} from "./components/Page";
-import {MessagesContainer} from "./base/MessagesContainer";
 import { Provider } from 'react-redux';
-import {store} from "./base/store";
-import {useMessage} from "./hoc/useMessage";
 
+// Pages
+import {Home, AnotherPage} from './components/pages';
+
+// Messages components
+import {MessagesContainer, store} from "./components/base";
+import {useMessage} from "./components/hoc/useMessage";
+
+// Base styles
+import './styles/base.css';
+
+
+// Handler for location change: clear messages when moving to another page
 const Location = withRouter(({ history }) => {
     const {clearMessages} = useMessage();
 
@@ -17,6 +24,7 @@ const Location = withRouter(({ history }) => {
     return '';
 });
 
+// Base navigation
 const Routing = () => {
     return (
         <Router>
@@ -32,13 +40,14 @@ const Routing = () => {
                 </ul>
             </nav>
             <Switch>
-                <Route path={'/'} exact component={App}/>
-                <Route path={'/page'} component={Page}/>
+                <Route path={'/'} exact component={Home}/>
+                <Route path={'/page'} component={AnotherPage}/>
             </Switch>
         </Router>
     )
 };
 
+// Root
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>

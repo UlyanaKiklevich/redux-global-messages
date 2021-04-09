@@ -4,7 +4,7 @@ const initialState = {
     messages: []
 };
 
-function counterReducer(state = initialState, action) {
+function messagesReducer(state = initialState, action) {
     switch (action.type) {
         case "addMessage":
             state.messages.push({...action.payload, _id: '_' + Math.random().toString(36).substr(2, 9)})
@@ -20,4 +20,4 @@ function counterReducer(state = initialState, action) {
     }
 }
 
-export const store = createStore(counterReducer);
+export const store = createStore(messagesReducer);
