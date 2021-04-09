@@ -9,5 +9,9 @@ export function useMessage() {
         store.dispatch({ type: 'clearMessages'})
     }
 
-    return {addMessage, clearMessages};
+    const hideMessage = (_id) => {
+        store.dispatch({ type: 'hideMessage', payload: {_id}})
+    }
+
+    return {addMessage, clearMessages, hideMessage};
 }

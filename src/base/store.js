@@ -12,6 +12,9 @@ function counterReducer(state = initialState, action) {
         case "clearMessages":
             state.messages = [];
             return { ...state };
+        case "hideMessage":
+            state.messages = state.messages.filter(message => message._id !== action.payload._id);
+            return { ...state };
         default:
             return state;
     }

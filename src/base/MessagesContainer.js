@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import './Message.css';
 import {Message} from './Message';
 import {store} from "./store";
+import {useMessage} from "../hoc/useMessage";
 
 
 export const MessagesContainer = () => {
     const [messages, setMessages] = useState([]);
+    const {hideMessage} = useMessage();
 
-    const removeMessage = (id) => {
-        store.dispatch({ type: 'hideMessage', payload: {_id: id}});
+    const removeMessage = (_id) => {
+        hideMessage(_id);
     };
 
     store.subscribe(() => {
