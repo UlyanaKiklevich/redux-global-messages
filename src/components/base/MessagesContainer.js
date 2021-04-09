@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './styles/Message.css';
-import {Message} from './Message';
-import {store} from "./store";
+import {Message, store} from './';
 import {useMessage} from "../hoc/useMessage";
-
 
 export const MessagesContainer = () => {
     const [messages, setMessages] = useState([]);
