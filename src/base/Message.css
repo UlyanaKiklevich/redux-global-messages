@@ -1,0 +1,41 @@
+.page-message {
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.message-container {
+    margin-bottom: 10px;
+}
+
+.page-message > .icon {
+    line-height: 1;
+    display: inline-block;
+}
+
+.page-message > .message-icon {
+    margin-right: 10px;
+}
+
+.page-message > .clear-icon {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.page-message.error {
+    background: #FCD5CE;
+}
+
+.page-message.warning {
+    background: #FEC89A;
+}
+
+.page-message.success {
+    background: #D8E2DC;
+}
