@@ -1,17 +1,9 @@
 import React, {useState} from 'react';
 import './styles/Message.css';
-import {Message} from './Message';
-import {store} from "./store";
-import {useMessage} from "../hoc/useMessage";
-
+import {Message, store} from './';
 
 export const MessagesContainer = () => {
     const [messages, setMessages] = useState([]);
-    const {hideMessage} = useMessage();
-
-    const removeMessage = (_id) => {
-        hideMessage(_id);
-    };
 
     store.subscribe(() => {
         setMessages([...store.getState().messages]);
@@ -21,7 +13,7 @@ export const MessagesContainer = () => {
     return (
         <div className={'message-container'}>
             {messages.map((message, index) =>
-                <Message key={index} message={message} removeMessage={removeMessage}/>)}
+                <Message key={index} message={message} />)}
         </div>
     )
 }
