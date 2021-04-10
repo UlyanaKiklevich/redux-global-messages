@@ -5,8 +5,8 @@ import ClearIcon from '@material-ui/icons/Clear';
 import {useMessage} from "../hoc/useMessage";
 import './styles/Message.css';
 
-export const Message = (props) => {
-    const {_id, messageCode, text} = props.message;
+export const Message = ({message}) => {
+    const {_id, messageCode, text} = message;
     const {hideMessage} = useMessage();
 
     let className = 'page-message ';
@@ -26,8 +26,6 @@ export const Message = (props) => {
             icon = <DoneIcon/>;
             break;
         default:
-            className += 'error';
-            icon = <ErrorOutlineIcon/>;
             break;
     }
 

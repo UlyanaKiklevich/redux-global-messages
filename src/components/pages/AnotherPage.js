@@ -1,4 +1,3 @@
-import React from 'react';
 import {useMessage} from "../hoc/useMessage";
 import './styles/Page.css';
 
